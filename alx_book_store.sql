@@ -27,25 +27,24 @@ CREATE TABLE Customers (
 );
 
 -- Create the Orders table
-CREATE TABLE ORDERS (
-    ORDER_ID INT AUTO_INCREMENT PRIMARY KEY,
-    CUSTOMER_ID INT,
-    ORDER_DATE DATE,
-    FOREIGN KEY (CUSTOMER_ID) REFERENCES CUSTOMERS(CUSTOMER_ID)
+CREATE Table Orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
 
--- Create the Order_Details table
-CREATE TABLE ORDER_DETAILS (
-    ORDERDETAILID INT AUTO_INCREMENT PRIMARY KEY,
-    ORDER_ID INT,
-    BOOK_ID INT,
-    QUANTITY DOUBLE,
-    FOREIGN KEY (ORDER_ID) REFERENCES ORDERS(ORDER_ID)
+CREATE TABLE Order_details (
+    order_detail_id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT,
+    book_id INT,
+    quantity DOUBLE,
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
-    FOREIGN KEY (BOOK_ID) REFERENCES BOOKS(BOOK_ID)
+    FOREIGN KEY (book_id) REFERENCES Books(book_id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
