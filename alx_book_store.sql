@@ -1,14 +1,14 @@
 
 CREATE DATABASE IF NOT EXISTS alx_book_store;
 
-USE ALX_BOOK_STORE;
+USE alx_book_store;
 
-CREATE TABLE authors (
+CREATE TABLE Authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
     author_name VARCHAR(215)
 );
 
-CREATE TABLE books (
+CREATE TABLE Books (
     book_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(130),
     author_id INT,
@@ -19,7 +19,7 @@ CREATE TABLE books (
         ON UPDATE CASCADE
 );
 
-CREATE TABLE customers (
+CREATE TABLE Customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_name VARCHAR(215),
     email VARCHAR(215) UNIQUE,
